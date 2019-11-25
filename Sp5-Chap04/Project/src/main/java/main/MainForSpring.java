@@ -7,8 +7,7 @@ import java.io.InputStreamReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import config.AppConf1;
-import config.AppConf2;
+import config.AppCtx;
 import spring.ChangePasswordService;
 import spring.DuplicateMemberException;
 import spring.MemberInfoPrinter;
@@ -19,24 +18,19 @@ import spring.RegisterRequest;
 import spring.VersionPrinter;
 import spring.WrongIdPasswordException;
 
-public class ManForSpring_TestUsingMoreThan2ConfigurationFiles {
+public class MainForSpring {
+
 	private static ApplicationContext ctx = null;
 
 	public static void main(String[] args) throws IOException {
 
-		ctx = new AnnotationConfigApplicationContext(AppConf1.class, AppConf2.class);
+		ctx = new AnnotationConfigApplicationContext(AppCtx.class);
 
-		// @Configuration 설정 클래스도 빈으로 등록함
-		AppConf1 appConf1 = ctx.getBean(AppConf1.class);
-		System.out.println(appConf1 != null);
-		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		while (true) {
 			System.out.println("명령어를 입력하세요");
-			
 			String command = reader.readLine();
-			
 			if (command.equalsIgnoreCase("exit")) {
 				System.out.println("종료합니다");
 				break;

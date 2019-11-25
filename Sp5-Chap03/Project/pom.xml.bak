@@ -23,7 +23,7 @@
 				<version>3.8.1</version>
 				<configuration>
 					<source>13</source>
-					<target>13</target>
+					<target>131</target>
 					<encoding>utf-8</encoding>
 				</configuration>
 			</plugin>
