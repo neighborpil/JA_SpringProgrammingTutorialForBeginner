@@ -14,7 +14,6 @@ public class MemberListPrinter {
 	}
 	
 //	public MemberListPrinter(MemberDao memberDao, MemberPrinter printer) {
-//		super();
 //		this.memberDao = memberDao;
 //		this.printer = printer;
 //	}
@@ -25,8 +24,8 @@ public class MemberListPrinter {
 	}
 	
 	@Autowired
-	@Qualifier("printer")
-	public void setMemberPrinter(MemberPrinter printer) {
+//	@Qualifier("printer")
+	public void setMemberPrinter(MemberSummaryPrinter printer) {
 		this.printer = printer;
 	}
 
